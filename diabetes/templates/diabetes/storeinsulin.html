@@ -1,0 +1,66 @@
+
+{% extends 'diabetes/base.html' %}
+
+
+
+{% block content %}
+
+
+
+
+
+
+<div class="container mt-5">
+
+  <div class="row">
+
+    <div class="col-sm-4 mt-5">
+
+    </div>
+
+
+
+    <div class="col-sm-4 mt-5 mb-5">
+
+
+    <form  action="{% url 'storeinsulin' %}" method="POST">
+
+{% csrf_token %}
+
+<input type="text" name="insulin">
+<button type="submit">Store</button>
+
+</form>
+
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

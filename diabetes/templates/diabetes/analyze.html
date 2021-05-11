@@ -1,0 +1,39 @@
+
+
+{% extends 'diabetes/base.html' %}
+
+
+{% block content %}
+
+
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm-4">
+
+    </div>
+
+
+
+    <div class="col-sm-4">
+
+{{df|safe}}
+<img src="data:image/png;base64,{{ graphic|safe }}"></img>
+
+     
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+{% endblock %}

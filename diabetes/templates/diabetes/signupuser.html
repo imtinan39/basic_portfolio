@@ -1,0 +1,52 @@
+{% extends 'diabetes/base.html' %}
+
+
+
+
+
+{% block content %}
+
+
+
+<div class="container">
+
+  <div class="row">
+
+
+
+    <div class="col-sm-4">
+      
+
+    </div>
+
+    <div class="col-sm-4">
+
+<form action="{% url 'signupuser' %}" method="POST">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label  class="form-label">Email address</label>
+    <input  class="form-control" name="username" >
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password1" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password2" id="exampleInputPassword1">
+  </div>
+  {{error}}
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+{% endblock %}

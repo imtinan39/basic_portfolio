@@ -1,0 +1,219 @@
+{% extends 'diabetes/base.html' %}
+
+
+
+
+
+
+{% block content %}
+
+
+
+<div class="container">
+
+<div class="row">
+<div class="col-sm-4">
+
+
+</div>
+
+
+
+<div class="col-sm-4">
+
+
+
+<form action="{% url 'predict' %}" method="POST">
+	{% csrf_token %}
+
+
+<div class="alert alert-info mt-3" role="alert">
+  <h3> What is your age? </h3>
+</div>
+
+<input type="number" name="age">
+
+
+
+<div class="alert alert-info mt-3" role="alert">
+  <h5> what is your gender?</h5>
+</div>
+
+  <input type="radio"  name="gender" value=1>
+  <label >Male</label><br>
+  <input type="radio" name="gender" value=0>
+  <label >Female</label><br>
+
+<div class="alert alert-info mt-3" role="alert">
+  <h3> Do you have polyuria ?</h3>
+</div>
+  
+  <input type="radio"  name="polyuria" value=1>
+  <label class="btn btn-success">Yes</label><br>
+  <input type="radio"  name="polyuria" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+
+  <div class="alert alert-info mt-3" role="alert">
+  <h3> Do you have Polydipsia? </h3>
+</div>
+  
+  <input type="radio"  name="Polydipsia" value=1>
+  <label class="btn btn-success" >Yes</label><br>
+  <input type="radio"  name="Polydipsia" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+ <div class="alert alert-info mt-3" role="alert">
+  <h3> Do you have sudden weight loss? </h3>
+</div>
+   
+  <input type="radio"  name="weightloss" value=1>
+  <label class="btn btn-success" >Yes</label><br>
+  <input type="radio" i name="weightloss" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+   <div class="alert alert-info mt-3" role="alert">
+  <h3> Do you have weakness ? </h3>
+</div>
+   
+
+    
+  <input type="radio"  name="weakness" value=0>
+  <label class="btn btn-success">Yes</label><br>
+  <input type="radio"  name="weakness" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+
+<div class="alert alert-info mt-3" role="alert">
+  <h3> Do you have Polyphagia  ?</h3>
+</div>
+   
+    
+  <input type="radio"  name="Polyphagia" value=1>
+  <label class="btn btn-success" >Yes</label><br>
+  <input type="radio"  name="Polyphagia" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+
+<div class="alert alert-info mt-3" role="alert">
+  <h3> Do you have    Genital thrush? </h3>
+</div>
+   
+  <input type="radio"  name="Genital thrush" value=1>
+  <label class="btn btn-success" >Yes</label><br>
+  <input type="radio" name="Genital thrush" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+<div class="alert alert-info mt-3" role="alert">
+ <h3> Do you have   visual blurring?  </h3>
+</div>
+
+  
+  <input type="radio"  name="visual blurring" value=1>
+  <label class="btn btn-success" >Yes</label><br>
+  <input type="radio"  name="visual blurring" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+ <div class="alert alert-info mt-3" role="alert">
+ <h3> Do you have   Itching?  </h3>
+</div>
+
+
+   
+  <input type="radio" name="Itching" value=1>
+  <label class="btn btn-success" >Yes</label><br>
+  <input type="radio"  name="Itching" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+<div class="alert alert-info mt-3" role="alert">
+ <h3> Do you have   Irritability?</h3>
+</div>
+
+  
+  <input type="radio" name="Irritability" value=1>
+  <label class="btn btn-success" >Yes</label><br>
+  <input type="radio"  name="Irritability" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+<div class="alert alert-info mt-3" role="alert">
+ <h3> Do you have   delayed healing?</h3>
+</div>
+
+
+  <input type="radio"  name="delayed healing" value=1>
+  <label class="btn btn-success" >Yes</label><br>
+  <input type="radio" name="delayed healing" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+
+<div class="alert alert-info mt-3" role="alert">
+ <h3> Do you have   partial paresis?</h3>
+</div>
+
+  
+  <input type="radio"  name="partial paresis" value=1>
+  <label class="btn btn-success" >Yes</label><br>
+  <input type="radio"  name="partial paresis" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+
+<div class="alert alert-info mt-3" role="alert">
+<h3> Do you have    muscle stiffness?</h3>
+</div>
+
+  
+  <input type="radio"  name="muscle stiffness" value=1>
+  <label class="btn btn-success" >Yes</label><br>
+  <input type="radio"  name="muscle stiffness" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+<div class="alert alert-info mt-3" role="alert">
+<h3> Do you have    Alopecia?</h3>
+</div>
+
+
+
+  <input type="radio"  name="Alopecia" value=1>
+  <label class="btn btn-success" >Yes</label><br>
+  <input type="radio"  name="Alopecia" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+<div class="alert alert-info mt-3" role="alert">
+<h3> Do you have    Obesity?</h3>
+</div>
+
+
+  
+  <input type="radio"  name="Obesity" value=1>
+  <label class="btn btn-success" >Yes</label><br>
+  <input type="radio"  name="Obesity" value=0>
+  <label class="btn btn-danger">No</label><br>
+
+
+
+  <input type="submit" value="Submit">
+
+
+
+</form> 
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
